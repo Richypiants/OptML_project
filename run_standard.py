@@ -21,7 +21,7 @@ def main():
     ("SOAPHalving", lambda model: SOAP(model.parameters(), lr=0.005, precondition_frequency=1024, precondition_frequency_routine=halving_frequency)),
     ("SOAPDoubling1024", lambda model: SOAP(model.parameters(), lr=0.005, precondition_frequency=1, precondition_frequency_routine=doubling_frequency1024)),
     ("SOAPFixedInterval", lambda model: SOAP(model.parameters(), lr=0.005, precondition_frequency=8, precondition_frequency_routine=fixed_interval_doubling_frequency)),
-    ("SOAPLossChange", lambda model: SOAP(model.parameters(), lr=0.005, precondition_frequency=0.1, precondition_frequency_routine=loss_dependent_frequency)),
+    ("SOAPLossChange", lambda model: SOAP(model.parameters(), lr=0.005, precondition_frequency=0.3, precondition_frequency_routine=loss_dependent_frequency)),
     ("SOAPDoubling256", lambda model: SOAP(model.parameters(), lr=0.005, precondition_frequency=1, precondition_frequency_routine=doubling_frequency256)),
     ]
     
