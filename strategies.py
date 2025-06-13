@@ -57,7 +57,7 @@ def doubling_frequency1024(state):
         return False
 
 # Same as the previous, but with a tighter clip as the maximum frequency
-def doubling_frequency_256(state):
+def doubling_frequency256(state):
     global counter
     if "last_update" not in state:
         state["last_update"] = 0
