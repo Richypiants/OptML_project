@@ -19,17 +19,17 @@ def main():
     ("SOAP100", lambda model: SOAP(model.parameters(), lr=0.005, precondition_frequency=100)),
     ("SOAP300", lambda model: SOAP(model.parameters(), lr=0.005, precondition_frequency=300)),
     ("SOAPHalving", lambda model: SOAP(model.parameters(), lr=0.005, precondition_frequency=1024, precondition_frequency_routine=halving_frequency)),
-    ("SOAPDoubling", lambda model: SOAP(model.parameters(), lr=0.005, precondition_frequency=1, precondition_frequency_routine=doubling_frequency)),
+    ("SOAPDoubling1024", lambda model: SOAP(model.parameters(), lr=0.005, precondition_frequency=1, precondition_frequency_routine=doubling_frequency1024)),
     ("SOAPFixedInterval", lambda model: SOAP(model.parameters(), lr=0.005, precondition_frequency=8, precondition_frequency_routine=fixed_interval_doubling_frequency)),
     ("SOAPLossChange", lambda model: SOAP(model.parameters(), lr=0.005, precondition_frequency=0.1, precondition_frequency_routine=loss_dependent_frequency)),
-    ("SOAPDoublingClipped256", lambda model: SOAP(model.parameters(), lr=0.005, precondition_frequency=1, precondition_frequency_routine=doubling_frequency_clipped)),
+    ("SOAPDoubling256", lambda model: SOAP(model.parameters(), lr=0.005, precondition_frequency=1, precondition_frequency_routine=doubling_frequency_256)),
     ]
     
     # Loading data set
     batch_size = 200
     training_loader, test_loader = data.loadData(batch_size)
 
-    num_epochs = 10
+    num_epochs = 5
     num_trainings = 5
     models = []
     
