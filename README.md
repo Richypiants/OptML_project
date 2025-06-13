@@ -9,4 +9,4 @@ This project was summarized in the project report attached in this project.
 
 To generate the plots used in the report:
 1. Run run_standard.py to generate plots for training on standard ResNet18
-2. Run run_SD.jupyternb to generate plots for training the modifed ResNet18 with stochastic depth and dropout.
+2. Run run_dropoutSD.jupyternb to generate plots for training the modifed ResNet18 with stochastic depth and dropout.
